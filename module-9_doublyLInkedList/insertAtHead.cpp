@@ -52,6 +52,12 @@ using namespace std;
 
  void insertAtHead(Node *&head, int v, int pos){
     Node *newNode = new Node(v);
+
+    if(head == NULL){
+        head = newNode;
+        return;
+    }
+
     head->prev = newNode;
     newNode->next = head;
     head = newNode;
